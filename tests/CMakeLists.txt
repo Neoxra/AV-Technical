@@ -1,0 +1,1 @@
+set(BASIC ${PROJECT_NAME}_test)

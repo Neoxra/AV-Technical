@@ -1,5 +1,7 @@
 // Question 1 Install g tests and add to cmakes lists
 #include "gtest/gtest.h"
+#include <thread>
+#include <math.h>
 
 
 const int values[] = { 1,2,3,4,5 };
@@ -8,10 +10,10 @@ void function(char**);
 
 template <typename T>
 struct ptr_holder {
-  static_assert(std::is_same_v<T, std::remove_pointe<T>>);
+  static_assert(std::is_same_v<T, std::remove_pointer<T>>);
 };
 
-int total = 0
+int total = 0;
 
 class Wallet
 {
@@ -53,20 +55,20 @@ int Main()
     // Question 2
     int x = 10;
     int y = 15;
-    cout << " "<< (x, y) << std::endl;
+    std::cout << " "<< (x, y) << std::endl;
 
     // Question 3 Get the function to run
-    char arr[] = { "ant", "bat", "cat", "dog", "egg", "fly" };
+    char* arr[] = { "ant", "bat", "cat", "dog", "egg", "fly" };
 	function(arr);
 
 
     // Question 4 Insert in map
-    typedef map<int, double> valmap;
+    typedef std::map<int, double> valmap;
 
     valmap m;
 
     for (int i = 0; i < NVALS; i++)
-        m.insert(make_pair(values[i], pow(values[i], .5)));
+        m.insert(std::make_pair(values[i], pow(values[i], .5)));
 
     valmap::iterator it = 100;              
     valmap::iterator it2(100);              
@@ -76,7 +78,7 @@ int Main()
     int i = 1, j = 1;
     if ( (i =! 3) && (j==1))
     {
-        cout << "inside if statement\n";
+        std::cout << "inside if statement\n";
     }
 
     // Question 6 Store a char * pointer in template
